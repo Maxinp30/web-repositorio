@@ -1,8 +1,8 @@
 article{
-  font-size:;
+  font-size:30;
   font-family:'lobster', cursive;
   font-weight:24;
-  color:#cccccc;
+  color:black;
   text-align:center; 
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   font-size:16px; 
@@ -11,7 +11,7 @@ article{
 }
 
 body{
-	background-color:black;    
+	background-color:#add8e6;    
 }
 
 
@@ -19,7 +19,7 @@ table{
   font-size:16px;
   font-family:'lobster', cursive;
   font-weight:50; 
-  color:#cccccc;
+  color:black;
   height:90px;
   width:800px;  
   background-color:; 
@@ -104,7 +104,7 @@ footer{
 
 
 aside{
-	background-color:black;
+	background-color:#add8e6;
 	padding: 20px;
 	width: 250px;
 	position:fixed;
@@ -134,38 +134,102 @@ li{
 button{
   border:none;
   border-image:none;
-  background-color:black;    
+  background-color:#add8e6;    
 
 }
 
-nav{
-display:flex;
-align-items:center;
-justify-content: space-between;
-padding-top:20px;
-padding-left:5%;
-padding-right:5%;
-font-weight:bold;
-font-family:'lobster', cursive;
-width:100%;     
+.menu {
+    background-color:#333;
+    padding: 10px;
 }
 
-#h1{
- color:white;
- font-size:45px;
- font-family:'lobster', cursive; 
+.btn {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    padding: 10px;
 }
 
-.ul .li{
-  display:inline-block;
-  padding:0px 20px;  
+.btn span {
+    background-color: #fff;
+    display: block;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    width: 24px;
 }
 
-a{
-  color:#cccccc;
-  text-decoration:none;
+.btn span:before,
+.btn span:after {
+    background-color: #fff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.3s ease;
+    width: 100%;
 }
 
-a:hover{
-  color:aqua; 
+.btn span:before {
+    top: -8px;
+}
+
+.btn span:after {
+    bottom: -8px;
+}
+
+#toggle:checked + .btn span {
+    background-color: transparent;
+}
+
+#toggle:checked + .btn span:before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+#toggle:checked + .btn span:after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+.lista {
+    display: none;
+    list-style: none;
+    padding: 0;
+}
+
+#toggle:checked ~ .lista {
+    display: block;
+}
+
+.lista li {
+    padding: 10px;
+}
+
+.lista li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.submenu {
+    display: none;
+    list-style: none;
+    padding: 0;
+}
+
+.submenu-toggle:checked + label + .submenu {
+    display: block;
+}
+
+.submenu li {
+    padding: 5px 10px;
+    background-color: #555;
+}
+
+.submenu li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
 }
